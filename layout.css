@@ -186,3 +186,22 @@ html[dir="rtl"], body[dir="rtl"] {
     text-align: center;
   }
 }
+/* ===== Fix فضای خالی در حالت RTL موبایل ===== */
+html[dir="rtl"], body[dir="rtl"] {
+  overflow-x: hidden; /* جلوگیری از اسکرول افقی و فضای خالی */
+}
+
+[dir="rtl"] .container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/* جلوگیری از margin-left اضافی در حالت RTL */
+@media (max-width: 768px) {
+  [dir="rtl"] * {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+}
