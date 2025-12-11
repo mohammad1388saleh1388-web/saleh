@@ -145,3 +145,21 @@ footer{margin-top:60px;border-top:1px solid var(--border);background:rgba(255,25
   .features,.pricing,.blog,.stats,.team,.services{grid-template-columns:1fr}
   .hero{padding:64px 0 28px}
 }
+/* ===== RTL Fix for unwanted left space ===== */
+html[dir="rtl"], body[dir="rtl"] {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* جلوگیری از فضای خالی و اسکرول افقی */
+}
+
+[dir="rtl"] .container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/* اگر جایی margin-left ثابت داری، در حالت RTL اصلاح شود */
+[dir="rtl"] * {
+  margin-left: 0 !important;
+}
